@@ -32,7 +32,7 @@
         </div>
         @if(isset($post))
             <div class="form-group">
-                <img src="{{ asset($post->image) }}" alt="" style="width: 100%">
+                <img src="{{ URL::to('/storage/' . $post->image) }}" alt="" style="width: 100%">
             </div>
         @endif
         <div class="form-group">
@@ -95,7 +95,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
 <script>
     flatpickr('#published_at', {
-        enableTime: true
+        enableTime: true,
+        enableSeconds: true
     })
 
     $(document).ready(function() {
